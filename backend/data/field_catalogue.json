@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-10-31T00:00:00Z",
+  "allowed_indexes": [
+    "main",
+    "windows",
+    "sysmon",
+    "wazuh",
+    "network",
+    "security"
+  ],
+  "common_fields": [
+    "_time",
+    "host",
+    "source",
+    "sourcetype",
+    "index"
+  ],
+  "indexes": {
+    "windows": [
+      "EventCode",
+      "EventID",
+      "ComputerName",
+      "AccountName",
+      "TargetUserName",
+      "WorkstationName",
+      "LogonType",
+      "IpAddress",
+      "IpPort",
+      "Status",
+      "SubStatus",
+      "ProcessName",
+      "CommandLine"
+    ],
+    "sysmon": [
+      "EventCode",
+      "Image",
+      "CommandLine",
+      "ParentImage",
+      "ParentCommandLine",
+      "User",
+      "Hashes",
+      "MD5",
+      "SHA256",
+      "SourceIp",
+      "DestinationIp",
+      "DestinationPort"
+    ],
+    "wazuh": [
+      "agent.id",
+      "agent.name",
+      "agent.ip",
+      "rule.id",
+      "rule.level",
+      "rule.description",
+      "data.srcip",
+      "data.dstip"
+    ],
+    "network": [
+      "src_ip",
+      "dest_ip",
+      "src_port",
+      "dest_port",
+      "protocol",
+      "action",
+      "url",
+      "domain"
+    ],
+    "security": [
+      "user",
+      "action",
+      "status",
+      "severity",
+      "signature",
+      "category"
+    ]
+  }
+}

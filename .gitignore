@@ -1,0 +1,56 @@
+# =============================================================================
+# AEGIX (SOC-AI Assistant) — Official .gitignore
+# Enforces Least Privilege, Secrets Isolation (NFR-02, T7), and Safe Git Sync
+# =============================================================================
+
+# --- Environment Variables & Secrets (CRITICAL: Never commit secrets) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.pfx
+
+# --- Database & Storage (Local Laboratory Artifacts) ---
+*.db
+*.sqlite
+*.sqlite3
+aegix.db
+aegix_test.db
+
+# --- Generated PDF Reports & Dynamic Output ---
+backend/reports/*
+!backend/reports/.gitkeep
+
+# --- Python Bytecode & Cache ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# --- Python Virtual Environments ---
+venv/
+.venv/
+env/
+
+# --- Testing & Coverage Artifacts ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Node / Frontend Artifacts (React SPA) ---
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+npm-debug.log*
+
+# --- IDEs & OS Files ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
